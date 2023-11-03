@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E624348C2AF4DFC10071A4A4 /* GeneralExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E624348B2AF4DFC10071A4A4 /* GeneralExtensions.swift */; };
+		E62434922AF4E0280071A4A4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62434912AF4E0280071A4A4 /* ViewModel.swift */; };
+		E62434942AF4E0320071A4A4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62434932AF4E0320071A4A4 /* Model.swift */; };
+		E62434962AF4E0470071A4A4 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62434952AF4E0470071A4A4 /* Service.swift */; };
 		F028144A2AF4DBD0009841E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02814492AF4DBD0009841E4 /* AppDelegate.swift */; };
 		F028144C2AF4DBD0009841E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028144B2AF4DBD0009841E4 /* SceneDelegate.swift */; };
 		F028144E2AF4DBD0009841E4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028144D2AF4DBD0009841E4 /* HomeViewController.swift */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E624348B2AF4DFC10071A4A4 /* GeneralExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralExtensions.swift; sourceTree = "<group>"; };
+		E62434912AF4E0280071A4A4 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		E62434932AF4E0320071A4A4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		E62434952AF4E0470071A4A4 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		F02814462AF4DBD0009841E4 /* PokemonAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F02814492AF4DBD0009841E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F028144B2AF4DBD0009841E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +82,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E624348A2AF4DF990071A4A4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E624348B2AF4DFC10071A4A4 /* GeneralExtensions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E624348E2AF4DFF80071A4A4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E62434952AF4E0470071A4A4 /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E624348F2AF4E00A0071A4A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E62434932AF4E0320071A4A4 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E62434902AF4E0180071A4A4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E62434912AF4E0280071A4A4 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F028143D2AF4DBD0009841E4 = {
 			isa = PBXGroup;
 			children = (
@@ -97,11 +137,11 @@
 		F02814482AF4DBD0009841E4 /* PokemonAPI */ = {
 			isa = PBXGroup;
 			children = (
-				F028147F2AF4DD94009841E4 /* Extensions */,
+				E62434902AF4E0180071A4A4 /* ViewModel */,
+				E624348F2AF4E00A0071A4A4 /* Model */,
+				E624348A2AF4DF990071A4A4 /* Extension */,
 				F028147D2AF4DD59009841E4 /* Helpers */,
-				F028147C2AF4DD53009841E4 /* Service */,
-				F028147B2AF4DD4D009841E4 /* Model */,
-				F028147A2AF4DD46009841E4 /* ViewModel */,
+				E624348E2AF4DFF80071A4A4 /* Service */,
 				F02814792AF4DD3A009841E4 /* View */,
 				F02814522AF4DBD2009841E4 /* Assets.xcassets */,
 				F02814542AF4DBD2009841E4 /* LaunchScreen.storyboard */,
@@ -135,27 +175,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		F028147A2AF4DD46009841E4 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		F028147B2AF4DD4D009841E4 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F028147C2AF4DD53009841E4 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		F028147D2AF4DD59009841E4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,13 +182,6 @@
 				F028144B2AF4DBD0009841E4 /* SceneDelegate.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		F028147F2AF4DD94009841E4 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,7 +314,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E62434922AF4E0280071A4A4 /* ViewModel.swift in Sources */,
+				E62434962AF4E0470071A4A4 /* Service.swift in Sources */,
+				E624348C2AF4DFC10071A4A4 /* GeneralExtensions.swift in Sources */,
 				F028144E2AF4DBD0009841E4 /* HomeViewController.swift in Sources */,
+				E62434942AF4E0320071A4A4 /* Model.swift in Sources */,
 				F028144A2AF4DBD0009841E4 /* AppDelegate.swift in Sources */,
 				F028144C2AF4DBD0009841E4 /* SceneDelegate.swift in Sources */,
 			);
