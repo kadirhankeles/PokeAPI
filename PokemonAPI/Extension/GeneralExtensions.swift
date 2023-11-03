@@ -5,8 +5,7 @@
 //  Created by Ali Çolak on 3.11.2023.
 //
 
-import Foundation
-
+import UIKit
 
 extension UIColor {
     public convenience init?(hex: String, alpha: Double = 1.0) {
