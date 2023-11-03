@@ -20,9 +20,4 @@ struct PokemonResponseResult: Codable {
     var url: String
 }
 
-struct Pokemon: Identifiable {
-    var id: Int
-    var name: String
-    var url: String
-    var imageUrl: String
-}
+
