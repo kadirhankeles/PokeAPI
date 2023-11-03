@@ -9,6 +9,11 @@ import UIKit
 
 class HomeViewController: UIViewController, PokemonViewModelDelegate {
     
+    func updatePokemonList(pokemonList: [PokemonDto]) {
+        print(pokemonList.count)
+    }
+    
+    
     
     private let viewModel : PokemonViewModel
     
@@ -22,11 +27,6 @@ class HomeViewController: UIViewController, PokemonViewModelDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updatePokemonAllList(pokemonList: [PokemonDto]) {
-        print(pokemonList[0].id)
-        print(pokemonList[0].name)
-        print(pokemonList[0].imageUrl)
-    }
     
     
     private var searchPokemonBar : UISearchBar = {
@@ -38,7 +38,7 @@ class HomeViewController: UIViewController, PokemonViewModelDelegate {
         super.viewDidLoad()
         view.backgroundColor = .red
         
-        viewModel.fetchAllPokemon()
+        viewModel.getPokemons()
         
     }
     

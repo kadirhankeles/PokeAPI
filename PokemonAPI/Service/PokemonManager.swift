@@ -55,13 +55,14 @@ final class PokemonManager :  PokemonService {
     func fetchPokemonByPage(pageNumber: Int, completion: @escaping (Result<PokemonListResponse, ServiceError>) -> ()) {
         if let url = URL(string: Constants.baseURL + endpoints.pokemon.rawValue + Constants.offsetQuery + String((pageNumber - 1) * AppConstants.pageSize) + Constants.paginationLimitQuery) {
             
+                        
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if error != nil {
                     completion(.failure(.serverError))
                 } else if let data = data {
                     
                     let pokemonList = try? JSONDecoder().decode(PokemonListResponse.self, from: data)
-                    
+                                        
                     if let pokemonList = pokemonList {
                         completion(.success(pokemonList))
                     } else {

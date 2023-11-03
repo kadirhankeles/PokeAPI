@@ -15,13 +15,20 @@ class PokemonViewModel {
     weak var delegate : PokemonViewModelDelegate?
     
     var allPokemons: [PokemonDto] = []
+    var pagedPokemons: [PokemonDto] = []
+    
+    var pageNumber = 1
     
     init(pokemonService: PokemonService) {
         self.pokemonService = pokemonService
     }
     
+    func getPokemons() {
+        fetchPokemonByPageNumber()
+        pageNumber = pageNumber + 1
+    }
     
-    func fetchAllPokemon() {
+    private func fetchAllPokemon() {
         
         pokemonService.fetchAllPokemon { result in
             
@@ -30,7 +37,33 @@ class PokemonViewModel {
                 
                 self.allPokemons = pokemonList.results.map(PokemonDto.init)
                 
-                self.delegate?.updatePokemonAllList(pokemonList: self.allPokemons)
+            case .failure(let error):
+                switch error {
+                case .urlError:
+                    print("There is an error in the url")
+                case .decodingError:
+                    print("There is an Error in Model or JSON data")
+                case .serverError:
+                    print("There is a problem with the server")
+                }
+            }
+            
+        }
+    }
+    
+    
+    private func fetchPokemonByPageNumber() {
+        
+        pokemonService.fetchPokemonByPage(pageNumber: pageNumber) { result in
+            
+            switch result {
+            case .success(let pokemonList):
+                                
+                let newPagedPokemons = pokemonList.results.map(PokemonDto.init)
+                
+                self.pagedPokemons += newPagedPokemons
+                            
+                self.delegate?.updatePokemonList(pokemonList: self.pagedPokemons)
             case .failure(let error):
                 switch error {
                 case .urlError:

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol PokemonViewModelDelegate: AnyObject{
-    func updatePokemonAllList(pokemonList: [PokemonDto])
+    func updatePokemonList(pokemonList: [PokemonDto])
 }
