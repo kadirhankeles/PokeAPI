@@ -12,6 +12,7 @@ struct PokemonDto {
     
     let pokemon : PokemonResponseResult
     
+    
     var id : Int {
         if let id = pokemon.url.components(separatedBy: "/").compactMap({ Int($0) }).last {
             return id
@@ -20,8 +21,19 @@ struct PokemonDto {
         }
     }
     
+    var idString: String {
+        if let id = pokemon.url.components(separatedBy: "/").compactMap({ Int($0) }).last {
+            return "#" + String(format: "%03d", id)
+        } else {
+            return "#001"
+        }
+    }
+    
     var name : String {
-        pokemon.name
+        guard let firstCharacter = pokemon.name.first else {
+            return ""
+        }
+        return String(firstCharacter).uppercased() + pokemon.name.dropFirst().lowercased()
     }
     
     var imageUrl: String {
