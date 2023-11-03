@@ -46,11 +46,12 @@ class PokemonCVC: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.layer.shadowOffset = CGSize(width: 1, height: 1)
-        contentView.layer.shadowRadius = 5
+        contentView.layer.shadowRadius = 2
+        contentView.layer.cornerRadius = 7
         contentView.layer.shadowColor = UIColor.gray.cgColor
-        contentView.layer.shadowOpacity = 1
+        contentView.layer.shadowOpacity = 0.8
         contentView.layer.masksToBounds = false
-        
+        contentView.backgroundColor = .white
         contentView.addSubviews([grayView,pokemonImage,pokemonIdLabel,pokemonLabelName])
         setLayouts()
     }

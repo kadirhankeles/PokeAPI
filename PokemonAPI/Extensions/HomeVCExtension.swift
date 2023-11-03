@@ -88,7 +88,7 @@ extension HomeViewController {
     @objc
     func sortButtonPressed(){
         
-        var sortViewState = self.sortView.isHidden
+        let sortViewState = self.sortView.isHidden
         
         
         DispatchQueue.main.async { [weak self] in
