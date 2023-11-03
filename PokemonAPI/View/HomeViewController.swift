@@ -9,8 +9,13 @@ import UIKit
 
 class HomeViewController: UIViewController, PokemonViewModelDelegate {
     
+    func updatePokemon(pokemon: PokemonDetailExtensionDto) {
+
+    }
+    
+    
     func updatePokemonList(pokemonList: [PokemonDto]) {
-        print(pokemonList.count)
+        
     }
     
     
@@ -40,10 +45,9 @@ class HomeViewController: UIViewController, PokemonViewModelDelegate {
         
         viewModel.getPokemons()
         
+        viewModel.getPokemon(pokemonId: 1)
+        
     }
     
-    
-
-
 }
 
