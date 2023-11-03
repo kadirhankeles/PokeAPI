@@ -5,9 +5,11 @@
 //  Created by Ali Çolak on 3.11.2023.
 //
 
-import Foundation
+import UIKit
 
 struct AppConstants {
+    static let deviceWidth = UIScreen.main.bounds.width
+    static let deviceHeight = UIScreen.main.bounds.height
     static let allPokemonCount = 1292
     static let limitOWnImageId = 10263
     static let limitOwnSpeciesId = 1017

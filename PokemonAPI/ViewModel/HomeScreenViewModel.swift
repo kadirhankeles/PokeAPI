@@ -16,8 +16,12 @@ class HomeScreenViewModel {
     
     var allPokemons: [PokemonDto] = []
     var pagedPokemons: [PokemonDto] = []
+    var filteredPokemons: [PokemonDto] = []
     
-    var pageNumber = 1
+    var isSorteedId = true
+    
+    var idPageNumber = 1
+    var namePageNumber = 1
     
     init(pokemonService: PokemonService) {
         self.pokemonService = pokemonService
@@ -31,6 +35,26 @@ class HomeScreenViewModel {
     
     func getPokemonsByPage() {
         fetchPokemonByPageNumber()
+    }
+    
+    func searchPokemon(text: String) {
+        
+        if text.count > 2 {
+            filteredPokemons = allPokemons.filter { pokemon in
+                
+                
+                let searchedLowerText = text.lowercased()
+                
+                return pokemon.name.lowercased().contains(searchedLowerText) || String(pokemon.id).lowercased() == searchedLowerText
+
+            }
+                        
+        }else {
+        
+        }
+        
+        
+        
     }
     
     private func fetchAllPokemon() {
@@ -59,7 +83,7 @@ class HomeScreenViewModel {
     
     private func fetchPokemonByPageNumber() {
         
-        pokemonService.fetchPokemonByPage(pageNumber: pageNumber) { result in
+        pokemonService.fetchPokemonByPage(pageNumber: idPageNumber) { result in
             
             switch result {
             case .success(let pokemonList):
@@ -68,7 +92,7 @@ class HomeScreenViewModel {
                 
                 self.pagedPokemons += newPagedPokemons
                 
-                self.pageNumber = self.pageNumber + 1
+                self.idPageNumber = self.idPageNumber + 1
                 
                 self.delegate?.updatePokemonList(pokemonList: self.pagedPokemons)
             case .failure(let error):

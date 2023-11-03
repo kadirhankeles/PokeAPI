@@ -18,7 +18,7 @@ extension UIColor {
         }
         let scanner = Scanner(string: pureString)
         var hexNumber: UInt64 = 0
-        
+
         if scanner.scanHexInt64(&hexNumber) {
             self.init(
                 red: CGFloat((hexNumber & 0xFF0000) >> 16) / 255.0,
@@ -29,5 +29,14 @@ extension UIColor {
             return
         }
         return nil
+    }
+}
+
+
+extension UIView {
+    func addSubviews(_ views : [UIView]){
+        views.forEach { view in
+            addSubview(view)
+        }
     }
 }
