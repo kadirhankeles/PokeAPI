@@ -7,22 +7,18 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, PokemonViewModelDelegate {
+class HomeViewController: UIViewController, HomeScreenViewModelDelegate {
     
-    func updatePokemon(pokemon: PokemonDetailExtensionDto) {
 
-    }
-    
-    
     func updatePokemonList(pokemonList: [PokemonDto]) {
-        
+        print(pokemonList.count)
     }
     
     
     
-    private let viewModel : PokemonViewModel
+    private let viewModel : HomeScreenViewModel
     
-    init(viewModel : PokemonViewModel) {
+    init(viewModel : HomeScreenViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         self.viewModel.delegate = self
@@ -43,10 +39,8 @@ class HomeViewController: UIViewController, PokemonViewModelDelegate {
         super.viewDidLoad()
         view.backgroundColor = .red
         
-        viewModel.getPokemons()
-        
-        viewModel.getPokemon(pokemonId: 1)
-        
+        viewModel.getPokemonsByPage()
+                
     }
     
 }

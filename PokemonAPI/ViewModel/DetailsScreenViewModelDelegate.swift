@@ -1,5 +1,5 @@
 //
-//  PokemonViewModelOutput.swift
+//  DetailsScreenViewModelDelegate.swift
 //  PokemonAPI
 //
 //  Created by Ali Çolak on 3.11.2023.
@@ -7,7 +7,6 @@
 
 import Foundation
 
-protocol PokemonViewModelDelegate: AnyObject{
-    func updatePokemonList(pokemonList: [PokemonDto])
+protocol DetailsScreenViewModelDelegate : AnyObject {
     func updatePokemon(pokemon: PokemonDetailExtensionDto)
 }
