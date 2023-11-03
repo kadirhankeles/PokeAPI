@@ -12,8 +12,7 @@ class HomeViewController: UIViewController, HomeScreenViewModelDelegate  {
     
     private let viewModel : HomeScreenViewModel
     
-    var pagedPokemons : [PokemonDto] = []
-    var filteredPokemons: [PokemonDto] = []
+    var pokemons : [PokemonDto] = []
     
     init(viewModel : HomeScreenViewModel) {
         self.viewModel = viewModel
@@ -27,7 +26,7 @@ class HomeViewController: UIViewController, HomeScreenViewModelDelegate  {
     
     
     func updatePokemonList(pokemonList: [PokemonDto]) {
-        pagedPokemons = pokemonList
+        pokemons = pokemonList
     }
     
     lazy var searchPokemonBar : UISearchBar = {

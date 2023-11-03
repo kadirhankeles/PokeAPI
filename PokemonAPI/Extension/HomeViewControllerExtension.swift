@@ -12,12 +12,12 @@ extension HomeViewController : UICollectionViewDelegate , UICollectionViewDataSo
    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pagedPokemons.count
+        return pokemons.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pokemonCVC", for: indexPath) as! PokemonCVC
-        cell.configure(with: pagedPokemons[indexPath.row])
+        cell.configure(with: pokemons[indexPath.row])
         return cell
     }
     
