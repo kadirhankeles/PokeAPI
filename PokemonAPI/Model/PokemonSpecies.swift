@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PokemonSpecies {
+struct PokemonSpecies: Codable {
     let base_happiness: Int
     let capture_rate: Int
     let color: Color
@@ -33,84 +33,84 @@ struct PokemonSpecies {
     let varieties: [Variety]
 }
 
-struct Color {
+struct Color: Codable {
     let name: String
     let url: String
 }
 
-struct EggGroup {
+struct EggGroup: Codable {
     let name: String
     let url: String
 }
 
-struct Species {
+struct Species: Codable {
     let name: String
     let url: String
 }
 
-struct FlavorTextEntry {
+struct FlavorTextEntry: Codable {
     let flavor_text: String
     let language: Language
     let version: Version
 }
 
-struct Language {
+struct Language : Codable{
     let name: String
     let url: String
 }
 
-struct Version {
+struct Version: Codable {
     let name: String
     let url: String
 }
 
-struct Genus {
+struct Genus: Codable {
     let genus: String
     let language: Language
 }
 
-struct Generation {
+struct Generation: Codable {
     let name: String
     let url: String
 }
 
-struct GrowthRate {
+struct GrowthRate: Codable {
     let name: String
     let url: String
 }
 
-struct PokedexNumber {
+struct PokedexNumber: Codable {
     let entry_number: Int
     let pokedex: Pokedex
 }
 
-struct Pokedex {
+struct Pokedex: Codable {
     let name: String
     let url: String
 }
 
-struct PalParkEncounter {
+struct PalParkEncounter: Codable {
     let area: Area
     let base_score: Int
     let rate: Int
 }
 
-struct Area {
+struct Area: Codable {
     let name: String
     let url: String
 }
 
-struct Shape {
+struct Shape: Codable {
     let name: String
     let url: String
 }
 
-struct Variety {
+struct Variety: Codable {
     let is_default: Bool
     let pokemon: PokemonNameUrl
 }
 
-struct PokemonNameUrl {
+struct PokemonNameUrl: Codable {
     let name: String
     let url: String
 }
