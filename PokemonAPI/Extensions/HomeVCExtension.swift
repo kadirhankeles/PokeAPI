@@ -23,6 +23,10 @@ extension HomeViewController : UICollectionViewDelegate , UICollectionViewDataSo
     }
     
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        //TODO: Fetch in every %80 percent scroll
+    }
+    
 }
 
 extension HomeViewController {
@@ -41,7 +45,7 @@ extension HomeViewController {
         
         navigationController?.navigationBar.topItem?.leftBarButtonItems = [barLogo,appTitle]
         whiteView.addSubview(pokemonsCollectionView)
-        view.addSubviews([searchPokemonBar,whiteView,sortButton])
+        view.addSubviews([searchPokemonBar,whiteView,sortButton,sortView])
         
         pokemonsCollectionView.delegate = self
         pokemonsCollectionView.dataSource = self
@@ -72,13 +76,26 @@ extension HomeViewController {
             sortButton.rightAnchor.constraint(equalTo: view.rightAnchor,constant: -10),
             sortButton.heightAnchor.constraint(equalToConstant: 40),
             sortButton.widthAnchor.constraint(equalToConstant: 40),
+            
+            sortView.topAnchor.constraint(equalTo: sortButton.bottomAnchor , constant: 10),
+            sortView.rightAnchor.constraint(equalTo: sortButton.rightAnchor , constant: -10),
+            sortView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.2),
+            sortView.widthAnchor.constraint(equalToConstant: view.frame.width * 0.4)
         ])
     }
     
     
     @objc
     func sortButtonPressed(){
-      
+        
+        var sortViewState = self.sortView.isHidden
+        
+        
+        DispatchQueue.main.async { [weak self] in
+            
+            guard let self else {  return  }
+            self.sortView.isHidden = !sortViewState
+        }
             
     }
 
@@ -113,5 +130,20 @@ extension HomeViewController : UISearchBarDelegate {
     }
 }
 
+
+extension HomeViewController : SortViewProtocol {
+    
+    
+    func sortTypeChanged(newType: SortTypes) {
+        switch newType {
+        case .name:
+            break
+            //TODO: viewModel.sortByName
+        case .number:
+            break
+            //TODO: viewModel.sortById
+        }
+    }
+}
 
 

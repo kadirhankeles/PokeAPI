@@ -2,12 +2,12 @@
 //  ViewController.swift
 //  PokemonAPI
 //
-//  Created by Kadirhan Keles on 3.11.2023.
+//  Created by Mehmet Emin Ak on 3.11.2023.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController  {
     
     lazy var searchPokemonBar : UISearchBar = {
         let searchBar = UISearchBar()
@@ -42,6 +42,15 @@ class HomeViewController: UIViewController {
         view.backgroundColor = .white
         view.layer.cornerRadius = 10
         view.layer.shadowColor = UIColor.gray.cgColor
+        return view
+    }()
+    
+    lazy var sortView : SortView = {
+        let view = SortView()
+        view.mainController = self
+        view.isHidden = true
+        view.layer.zPosition = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -90,7 +99,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initialConfig()
-        view.backgroundColor = .red
+        view.backgroundColor = UIColor(hex: "#DC0A2D", alpha: 1)
         
     }
 
