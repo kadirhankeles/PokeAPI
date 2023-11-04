@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol HomeScreenViewModelDelegate: AnyObject{
+protocol HomeViewModelDelegate: AnyObject{
     func updatePokemonList(pokemonList: [PokemonDto])
 }

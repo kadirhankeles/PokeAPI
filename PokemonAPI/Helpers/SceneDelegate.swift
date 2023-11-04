@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         
         let service : PokemonService = PokemonManager()
-        let homeScreenViewModel = HomeScreenViewModel(pokemonService: service)
+        let homeScreenViewModel = HomeViewModel(pokemonService: service)
         let homeVC = HomeViewController(viewModel: homeScreenViewModel)
         let navigationController = UINavigationController(rootViewController: homeVC)
         window?.rootViewController = navigationController

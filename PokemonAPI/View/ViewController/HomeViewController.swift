@@ -7,14 +7,14 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, HomeScreenViewModelDelegate  {
+class HomeViewController: UIViewController, HomeViewModelDelegate  {
     
     
-    let viewModel : HomeScreenViewModel
+    let viewModel : HomeViewModel
     
     var pokemons : [PokemonDto] = []
     
-    init(viewModel : HomeScreenViewModel) {
+    init(viewModel : HomeViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         self.viewModel.delegate = self

@@ -8,11 +8,11 @@
 import Foundation
 
 
-class HomeScreenViewModel {
+class HomeViewModel {
     
     private let pokemonService : PokemonService
     
-    weak var delegate : HomeScreenViewModelDelegate?
+    weak var delegate : HomeViewModelDelegate?
     
     private var allPokemons: [PokemonDto] = []
     

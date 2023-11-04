@@ -7,11 +7,11 @@
 
 import UIKit
 
-class DetailsScreenViewModel {
+class DetailViewModel {
     
     private let pokemonService : PokemonService
     
-    weak var delegate : DetailsScreenViewModelDelegate?
+    weak var delegate : DetailViewModelDelegate?
     
     init(pokemonService: PokemonService) {
         self.pokemonService = pokemonService

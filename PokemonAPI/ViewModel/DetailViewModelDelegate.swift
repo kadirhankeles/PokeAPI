@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol DetailsScreenViewModelDelegate : AnyObject {
+protocol DetailViewModelDelegate : AnyObject {
     func updatePokemon(pokemon: PokemonDetailExtensionDto)
 }
