@@ -15,6 +15,8 @@
 		F02814612AF4DBD2009841E4 /* PokemonAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02814602AF4DBD2009841E4 /* PokemonAPITests.swift */; };
 		F028146B2AF4DBD2009841E4 /* PokemonAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028146A2AF4DBD2009841E4 /* PokemonAPIUITests.swift */; };
 		F028146D2AF4DBD2009841E4 /* PokemonAPIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028146C2AF4DBD2009841E4 /* PokemonAPIUITestsLaunchTests.swift */; };
+		F09473ED2AF4F25100073D1B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09473EC2AF4F25100073D1B /* DetailViewController.swift */; };
+		F09473F02AF4FA1400073D1B /* TypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09473EF2AF4FA1400073D1B /* TypeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		F02814662AF4DBD2009841E4 /* PokemonAPIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokemonAPIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F028146A2AF4DBD2009841E4 /* PokemonAPIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPIUITests.swift; sourceTree = "<group>"; };
 		F028146C2AF4DBD2009841E4 /* PokemonAPIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F09473EC2AF4F25100073D1B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F09473EF2AF4FA1400073D1B /* TypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +134,9 @@
 		F02814792AF4DD3A009841E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F09473EE2AF4F9EC00073D1B /* CollectionViewCell */,
 				F028144D2AF4DBD0009841E4 /* HomeViewController.swift */,
+				F09473EC2AF4F25100073D1B /* DetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,6 +176,14 @@
 			children = (
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F09473EE2AF4F9EC00073D1B /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F09473EF2AF4FA1400073D1B /* TypeCell.swift */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,8 +317,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F028144E2AF4DBD0009841E4 /* HomeViewController.swift in Sources */,
+				F09473F02AF4FA1400073D1B /* TypeCell.swift in Sources */,
 				F028144A2AF4DBD0009841E4 /* AppDelegate.swift in Sources */,
 				F028144C2AF4DBD0009841E4 /* SceneDelegate.swift in Sources */,
+				F09473ED2AF4F25100073D1B /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
