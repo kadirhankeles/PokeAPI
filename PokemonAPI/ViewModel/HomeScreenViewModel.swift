@@ -14,34 +14,42 @@ class HomeScreenViewModel {
     
     weak var delegate : HomeScreenViewModelDelegate?
     
-    var allPokemons: [PokemonDto] = []
+    private var allPokemons: [PokemonDto] = []
     
-    var representedPokemons: [PokemonDto] = []
+    private var representedPokemons: [PokemonDto] = []
     
-    var idSortedPokemons: [PokemonDto] = []
-    var nameSortedPokemons: [PokemonDto] = []
+    private var idSortedPokemons: [PokemonDto] = []
+    private var nameSortedPokemons: [PokemonDto] = []
     
-    var isSorteedId = true
+    private var isSorteedId = true
     
     init(pokemonService: PokemonService) {
         self.pokemonService = pokemonService
         fetchInitalData()
     }
     
-    func changeSortedMethod() {
+    
+    func changeSortMethodId() {
         
-        if isSorteedId {
+        if !isSorteedId {
             representedPokemons = idSortedPokemons
-        } else {
-            representedPokemons = nameSortedPokemons
+            isSorteedId = true
         }
-        
-        isSorteedId = !isSorteedId
         
         representPokemons()
         
     }
     
+    func changeSortMethodName() {
+        
+        if isSorteedId {
+            representedPokemons = nameSortedPokemons
+            isSorteedId = false
+        }
+        
+        representPokemons()
+        
+    }
     
     func getNewPokemons() {
         
@@ -55,7 +63,7 @@ class HomeScreenViewModel {
     
     func searchPokemon(text: String) {
         
-        if text.count > 2 {
+        if text.count != 0 {
             
             representedPokemons = allPokemons.filter { pokemon in
                 
@@ -161,9 +169,6 @@ class HomeScreenViewModel {
             
             let startIndex = nameSortedPokemons.count
             let endIndex = min(startIndex + AppConstants.pageSize, allPokemons.count - 1)
-            
-            print(startIndex)
-            print(endIndex)
                                     
             self.nameSortedPokemons.append(contentsOf: allPokemons[startIndex...endIndex])
             self.representedPokemons = self.nameSortedPokemons
@@ -173,11 +178,6 @@ class HomeScreenViewModel {
         }
         
         
-        
-        
     }
-    
-    
-    
     
 }

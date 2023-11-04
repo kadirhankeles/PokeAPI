@@ -9,7 +9,7 @@ import UIKit
 
 extension HomeViewController : UICollectionViewDelegate , UICollectionViewDataSource {
     
-   
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pokemons.count
@@ -22,7 +22,15 @@ extension HomeViewController : UICollectionViewDelegate , UICollectionViewDataSo
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        //TODO: Fetch in every %80 percent scroll
+        let contentHeight = scrollView.contentSize.height
+        let visibleHeight = scrollView.bounds.height
+        let scrollOffset = scrollView.contentOffset.y
+        
+        let scrollPercentage = (scrollOffset + visibleHeight) / contentHeight
+        
+        if scrollPercentage >= 0.8 {
+            viewModel.getNewPokemons()
+        }
     }
     
 }
@@ -94,9 +102,9 @@ extension HomeViewController {
             guard let self else {  return  }
             self.sortView.isHidden = !sortViewState
         }
-            
+        
     }
-
+    
     
     @objc
     func dissmissKeyboard(){
@@ -107,23 +115,12 @@ extension HomeViewController {
 
 extension HomeViewController : UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        if let searchedText = searchBar.text , searchedText.count > 2 {
-//            searchedPokemons = pokemons.filter { pokemon in
-//                
-//                
-//                let searchedLowerText = searchedText.lowercased()
-//                return pokemon.name.lowercased().contains(searchedLowerText) || pokemon.id.lowercased() == searchedLowerText
-//
-//            }
-//            
-//            dump(searchedPokemons)
-//        }else {
-//            searchedPokemons = pokemons
-//        }
-//        
-//        DispatchQueue.main.async { [weak self] in
-//            self?.pokemonsCollectionView.reloadData()
-//        }
+        
+        
+        if let searchedText = searchBar.text {
+            let searchedLowerText = searchedText.lowercased()
+            viewModel.searchPokemon(text: searchedLowerText)
+        }
         
     }
 }
@@ -131,15 +128,12 @@ extension HomeViewController : UISearchBarDelegate {
 
 extension HomeViewController : SortViewProtocol {
     
-    
     func sortTypeChanged(newType: SortTypes) {
         switch newType {
         case .name:
-            break
-            //TODO: viewModel.sortByName
+            viewModel.changeSortMethodName()
         case .number:
-            break
-            //TODO: viewModel.sortById
+            viewModel.changeSortMethodId()
         }
     }
 }

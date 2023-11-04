@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController, HomeScreenViewModelDelegate  {
     
     
-    private let viewModel : HomeScreenViewModel
+    let viewModel : HomeScreenViewModel
     
     var pokemons : [PokemonDto] = []
     
@@ -27,6 +27,9 @@ class HomeViewController: UIViewController, HomeScreenViewModelDelegate  {
     
     func updatePokemonList(pokemonList: [PokemonDto]) {
         pokemons = pokemonList
+        DispatchQueue.main.async {
+            self.pokemonsCollectionView.reloadData()
+        }
     }
     
     lazy var searchPokemonBar : UISearchBar = {
