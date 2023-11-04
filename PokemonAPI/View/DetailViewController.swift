@@ -572,7 +572,7 @@ class DetailViewController: UIViewController {
             descLabel.leadingAnchor.constraint(equalTo: whiteView.leadingAnchor, constant: 24),
             descLabel.trailingAnchor.constraint(equalTo: whiteView.trailingAnchor, constant: -24),
             descLabel.bottomAnchor.constraint(equalTo: statsLabel.topAnchor, constant: -24),
-            descLabel.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.2),
+            descLabel.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15),
             
             statsLabel.topAnchor.constraint(equalTo: descLabel.bottomAnchor, constant: 24),
             statsLabel.bottomAnchor.constraint(equalTo: statsHorizantalStack.topAnchor, constant: -24),
