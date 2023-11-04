@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F028144A2AF4DBD0009841E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02814492AF4DBD0009841E4 /* AppDelegate.swift */; };
-		F028144C2AF4DBD0009841E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028144B2AF4DBD0009841E4 /* SceneDelegate.swift */; };
-		F028144E2AF4DBD0009841E4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028144D2AF4DBD0009841E4 /* HomeViewController.swift */; };
 		F02814532AF4DBD2009841E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F02814522AF4DBD2009841E4 /* Assets.xcassets */; };
 		F02814562AF4DBD2009841E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F02814542AF4DBD2009841E4 /* LaunchScreen.storyboard */; };
 		F02814612AF4DBD2009841E4 /* PokemonAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02814602AF4DBD2009841E4 /* PokemonAPITests.swift */; };
@@ -39,8 +37,6 @@
 /* Begin PBXFileReference section */
 		F02814462AF4DBD0009841E4 /* PokemonAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F02814492AF4DBD0009841E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F028144B2AF4DBD0009841E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F028144D2AF4DBD0009841E4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F02814522AF4DBD2009841E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F02814552AF4DBD2009841E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F02814572AF4DBD2009841E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,11 +97,7 @@
 		F02814482AF4DBD0009841E4 /* PokemonAPI */ = {
 			isa = PBXGroup;
 			children = (
-				F028147F2AF4DD94009841E4 /* Extensions */,
 				F028147D2AF4DD59009841E4 /* Helpers */,
-				F028147C2AF4DD53009841E4 /* Service */,
-				F028147B2AF4DD4D009841E4 /* Model */,
-				F028147A2AF4DD46009841E4 /* ViewModel */,
 				F02814792AF4DD3A009841E4 /* View */,
 				F02814522AF4DBD2009841E4 /* Assets.xcassets */,
 				F02814542AF4DBD2009841E4 /* LaunchScreen.storyboard */,
@@ -135,47 +127,17 @@
 			isa = PBXGroup;
 			children = (
 				F09473EE2AF4F9EC00073D1B /* CollectionViewCell */,
-				F028144D2AF4DBD0009841E4 /* HomeViewController.swift */,
 				F09473EC2AF4F25100073D1B /* DetailViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		F028147A2AF4DD46009841E4 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		F028147B2AF4DD4D009841E4 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F028147C2AF4DD53009841E4 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		F028147D2AF4DD59009841E4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				F02814492AF4DBD0009841E4 /* AppDelegate.swift */,
-				F028144B2AF4DBD0009841E4 /* SceneDelegate.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		F028147F2AF4DD94009841E4 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F09473EE2AF4F9EC00073D1B /* CollectionViewCell */ = {
@@ -316,10 +278,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F028144E2AF4DBD0009841E4 /* HomeViewController.swift in Sources */,
 				F09473F02AF4FA1400073D1B /* TypeCell.swift in Sources */,
 				F028144A2AF4DBD0009841E4 /* AppDelegate.swift in Sources */,
-				F028144C2AF4DBD0009841E4 /* SceneDelegate.swift in Sources */,
 				F09473ED2AF4F25100073D1B /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
